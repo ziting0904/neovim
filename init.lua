@@ -3,6 +3,7 @@ require("config.lazy")
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("oil").setup()
+require("gitsigns").setup()
 
 local lsp_configs = {}
 for _, f in pairs(vim.api.nvim_get_runtime_file('lsp/*.lua', true)) do
