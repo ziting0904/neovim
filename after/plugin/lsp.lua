@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         local opts = { buffer = event.buf }
         local builtin = require("telescope.builtin")
+        -- remaps for telescope with lsp integration
         vim.keymap.set("n", "gh", vim.lsp.buf.hover, opts)
         vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -100,7 +101,6 @@ local workspace_dir = vim.fn.stdpath("data")
     .. project_name
 vim.lsp.config("jdtls", {
     name = "jdtls",
-
     -- `cmd` defines the executable to launch eclipse.jdt.ls.
     -- `jdtls` must be available in $PATH and you must have Python3.9 for this to work.
     --
@@ -135,13 +135,6 @@ vim.lsp.config("jdtls", {
         bundles = {},
     },
 })
-
---vim.api.nvim_create_autocmd("FileType", {
---	pattern = 'java',
---	callback = function(args)
---		require 'jdtls.jdtls_setup'.setup()
---	end
---})
 
 vim.lsp.config("roslyn_ls", {
     cmd = {
