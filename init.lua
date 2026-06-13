@@ -35,4 +35,12 @@ vim.lsp.config('lua_ls', {
     },
 })
 
+vim.g.diffs = {
+    integrations = {
+        fugitive = true,
+        neogit = true,
+        neojj = true,
+        gitsigns = true,
+    }
+}
 vim.cmd.colorscheme "catppuccin-mocha"
